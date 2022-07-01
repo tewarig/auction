@@ -1,0 +1,3980 @@
+{
+  "info": {
+    "_postman_id": "c256ba3c-0c61-4046-a74f-0b52315142e2",
+    "name": "Patient",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Patient-auth",
+      "item": [
+        {
+          "name": "Submit-user-profile-detail",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{patient-token}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"sarvesh\",\n    \"height\": 5.6,\n    \"weight\": 0,\n    \"gender\": \"male\",\n    \"email\": \"mnnitsarvesh@gmail.com\",\n    \"bloodGroup\": \"B+\",\n    \"dob\": \"1995-05-24\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/api/user/detail",
+              "host": ["{{url}}"],
+              "path": ["api", "user", "detail"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Resend-otp",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"key\": \"20hvT0p4dmYLlZLAS9XY\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/api/user/resend-otp",
+              "host": ["{{url}}"],
+              "path": ["api", "user", "resend-otp"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Login-via-gmail",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"sarvesh\",\n    \"email\": \"mnnitsarvesh@gmail.com\",\n    \"identifier\": \"loginviagmail\",\n    \"deviceToken\": \"deviceToken\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/api/user/gmail-login",
+              "host": ["{{url}}"],
+              "path": ["api", "user", "gmail-login"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Login-via-facebook",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "",
+                "value": "",
+                "type": "text",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"identifier\": \"loginviafacebook--\",\n    \"deviceToken\": \"deviceToken\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/api/user/facebook-login",
+              "host": ["{{url}}"],
+              "path": ["api", "user", "facebook-login"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "VerifyOTP",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"key\": \"HiMHXSzuAeMRaaNiKiP9\",\n    \"otp\": \"4702\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/api/user/verify-otp",
+              "host": ["{{url}}"],
+              "path": ["api", "user", "verify-otp"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoiVVNFUiIsInN1YiI6MSwiaWF0IjoxNjIzMTAyNzc5Nzc4LCJpc3MiOiJEb2NGbGl4LVVTRVIiLCJleHAiOjE2MjMxMDYzNzk3Nzh9.IIJSfqBDKQvBvQznwEOF8WRozeRNEIaLCuylqEKMLOc",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"email\": \"mnnitsarvesh@gmail.com\",\n    \"password\": \"Qwerty@12\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/api/user/login",
+              "host": ["{{url}}"],
+              "path": ["api", "user", "login"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Register",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"email\": \"sarvesh@kratikal.com\",\n    \"phone\": \"8953473232\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/api/user/register",
+              "host": ["{{url}}"],
+              "path": ["api", "user", "register"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Forgot-password",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"emailorphone\": \"8953479673\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/api/user/forgot-password",
+              "host": ["{{url}}"],
+              "path": ["api", "user", "forgot-password"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "OTP Login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"phone\": \"8953479673\",\n    \"countryCode\": \"+91\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/api/user/getotp",
+              "host": ["{{url}}"],
+              "path": ["api", "user", "getotp"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Verify Pin",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoiVVNFUiIsInN1YiI6Miwia2V5IjoiSGlNSFhTenVBZU1SYWFOaUtpUDkiLCJpYXQiOjE2NDk2OTcwMzk1MzIsImlzcyI6IkRvY0ZsaXgtVVNFUiIsImV4cCI6MTY2NTI0OTAzOTUzMn0.GveyFsvJsaN96tl914bfOEgy4KpswWHGABBo1luG66A",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/api/user/verify-pin",
+              "host": ["{{url}}"],
+              "path": ["api", "user", "verify-pin"],
+              "query": [
+                {
+                  "key": "Authorization",
+                  "value": null,
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Is Pin Set",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoiVVNFUiIsInN1YiI6Miwia2V5IjoiSGlNSFhTenVBZU1SYWFOaUtpUDkiLCJpYXQiOjE2NDk2OTcwMzk1MzIsImlzcyI6IkRvY0ZsaXgtVVNFUiIsImV4cCI6MTY2NTI0OTAzOTUzMn0.GveyFsvJsaN96tl914bfOEgy4KpswWHGABBo1luG66A",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/api/user/is-pin-set",
+              "host": ["{{url}}"],
+              "path": ["api", "user", "is-pin-set"],
+              "query": [
+                {
+                  "key": "Authorization",
+                  "value": null,
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Patient-category",
+      "item": [
+        {
+          "name": "Category-list",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{patient-token}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/api/patient/category",
+              "host": ["{{url}}"],
+              "path": ["api", "patient", "category"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Patient-subcategory",
+      "item": [
+        {
+          "name": "SubCategory-list",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{patient-token}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/api/patient/subcategory?categoryId=4",
+              "host": ["{{url}}"],
+              "path": ["api", "patient", "subcategory"],
+              "query": [
+                {
+                  "key": "categoryId",
+                  "value": "4"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get-single-subCategory",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{patient-token}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/api/patient/subcategory/get?subCategoryId=11",
+              "host": ["{{url}}"],
+              "path": ["api", "patient", "subcategory", "get"],
+              "query": [
+                {
+                  "key": "subCategoryId",
+                  "value": "11"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Set-default-unit",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{patient-token}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"unitId\": 1,\n    \"subCategoryId\": 1\n}"
+            },
+            "url": {
+              "raw": "{{url}}/api/patient/subcategory",
+              "host": ["{{url}}"],
+              "path": ["api", "patient", "subcategory"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "User-detail",
+      "item": [
+        {
+          "name": "Store-user-detail",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{patient-token}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"subCategoryId\": 11,\n    \"description\": \"description about user details\",\n    \"details\": [{\n        \"title\": \"Body Mass Index\",\n        \"value\": \"80\",\n        \"label\": \"kg\",\n        \"options\": \"[]\"\n    }],\n    \"date\": \"2022-04-02\",\n    \"time\": \"01:15 PM\",\n    \"type\": \"Text\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/api/user-detail",
+              "host": ["{{url}}"],
+              "path": ["api", "user-detail"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update-user-detail",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{patient-token}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"subCategoryId\": 5,\n    \"memberId\": 12,\n    \"subCategoryDetailId\": 7,\n    \"description\": \"hello about height description\",\n    \"details\": [{\n        \"title\": \"Height\",\n        \"value\": \"5.6\",\n        \"label\": \"unit\",\n        \"SubCategoryDetailMetaId\": 145\n    }, {\n        \"title\": \"Height-1-1\",\n        \"value\": 43,\n        \"label\": \"unit\",\n        \"SubCategoryDetailMetaId\": 146\n\n    }],\n    \"date\": \"2021-07-19\",\n    \"time\": \"10:00 PM\",\n    \"type\": \"cms\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/api/user-detail",
+              "host": ["{{url}}"],
+              "path": ["api", "user-detail"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "List-user-detail",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{patient-token}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/api/user-detail?subCategoryId=11",
+              "host": ["{{url}}"],
+              "path": ["api", "user-detail"],
+              "query": [
+                {
+                  "key": "subCategoryId",
+                  "value": "11"
+                },
+                {
+                  "key": "memberId",
+                  "value": "49",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get-single-user-detail",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{patient-token}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/api/user-detail/get?subCategoryDetailId=203&subCategoryId=5&memberId=49",
+              "host": ["{{url}}"],
+              "path": ["api", "user-detail", "get"],
+              "query": [
+                {
+                  "key": "subCategoryDetailId",
+                  "value": "203"
+                },
+                {
+                  "key": "subCategoryId",
+                  "value": "5"
+                },
+                {
+                  "key": "memberId",
+                  "value": "49"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete-detail",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoiVVNFUiIsInN1YiI6Miwia2V5IjoiJDJhJDEwJGovaGRjYmtQOFh4ZndBSXVMTEJDdS5iaGNraVVLTWhyNXFkS1Job2IzT25ST3dpRnhpSWNHIiwiaWF0IjoxNjIzODY3NjM0OTc2LCJpc3MiOiJEb2NGbGl4LVVTRVIiLCJleHAiOjE2Mzk0MTk2MzQ5NzZ9.WXSwGsH08TIF8dIqhQcIQorbdRWA-YkJrz_bGQ3NjYc",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"subCategoryDetailId\": 3\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/api/user-detail",
+              "host": ["{{url}}"],
+              "path": ["api", "user-detail"],
+              "query": [
+                {
+                  "key": "",
+                  "value": "",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Zoom",
+      "item": [
+        {
+          "name": "Generate-token",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{patient-token}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/api/zoom/token",
+              "host": ["{{url}}"],
+              "path": ["api", "zoom", "token"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Favorite",
+      "item": [
+        {
+          "name": "List Favourite",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{patient-token}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/api/favourite?categoryId=2",
+              "host": ["{{url}}"],
+              "path": ["api", "favourite"],
+              "query": [
+                {
+                  "key": "categoryId",
+                  "value": "2"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Add Favourite",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{patient-token}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"subCategoryId\": 5\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/api/favourite",
+              "host": ["{{url}}"],
+              "path": ["api", "favourite"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Parameter",
+      "item": [
+        {
+          "name": "Get-Parameter",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{patient-token}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/api/patient/parameter?subCategoryId=78",
+              "host": ["{{url}}"],
+              "path": ["api", "patient", "parameter"],
+              "query": [
+                {
+                  "key": "subCategoryId",
+                  "value": "78"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Vaccine",
+      "item": [
+        {
+          "name": "Subscribe-vaccine",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{patient-token}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"pincode\": \"230001\",\n    \"deviceToken\": \"fqF2SdFS7P_L9g10QY-HU8:APA91bEZSZNka0OD02bMvcroEyD9TA1Tml8UEshurDOpBw0vVL3M2_-xRYRDXNGjxumHO7XUyfE3Re6izexx7hEtqj6fJ-IX4jEu1Ul8-V2fWdgEK1mOk3suat5I0JipBnNL5ULwmqeb\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/api/vaccine/subscribed",
+              "host": ["{{url}}"],
+              "path": ["api", "vaccine", "subscribed"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Unsubscribe-vaccine",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoiVVNFUiIsInN1YiI6MSwia2V5IjoiV2Jyckh0Qzg1dG4wdXU0TFhTdkMiLCJpYXQiOjE2MjQ0NzMzNTAzNjIsImlzcyI6IkRvY0ZsaXgtVVNFUiIsImV4cCI6MTY0MDAyNTM1MDM2Mn0.XS3JQ9qE0RQxBtrgim2JDIRE3PnAQA2gc-PzBt4doZg",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"pincode\": \"201306\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/api/vaccine/unsubscribed",
+              "host": ["{{url}}"],
+              "path": ["api", "vaccine", "unsubscribed"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Member",
+      "item": [
+        {
+          "name": "Member-list",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{patient-token}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/api/member",
+              "host": ["{{url}}"],
+              "path": ["api", "member"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Member-add",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{patient-token}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "aman ojha",
+                  "type": "text"
+                },
+                {
+                  "key": "gender",
+                  "value": "male",
+                  "type": "text"
+                },
+                {
+                  "key": "relation",
+                  "value": "brother",
+                  "type": "text"
+                },
+                {
+                  "key": "weight",
+                  "value": "68",
+                  "type": "text"
+                },
+                {
+                  "key": "height",
+                  "value": "5.4",
+                  "type": "text"
+                },
+                {
+                  "key": "bloodGroup",
+                  "value": " B+",
+                  "type": "text"
+                },
+                {
+                  "key": "profile",
+                  "type": "file",
+                  "src": "/Users/sarveshpatel/Downloads/dummy.jpeg"
+                },
+                {
+                  "key": "password",
+                  "value": "qwerty",
+                  "type": "text"
+                },
+                {
+                  "key": "phone",
+                  "value": "1232367890",
+                  "type": "text"
+                },
+                {
+                  "key": "email",
+                  "value": "test1@gmail.com",
+                  "type": "text"
+                },
+                {
+                  "key": "dob",
+                  "value": "1995-05-14",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url}}/api/member",
+              "host": ["{{url}}"],
+              "path": ["api", "member"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Member-update",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{patient-token}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "aman ojha-1",
+                  "type": "text"
+                },
+                {
+                  "key": "gender",
+                  "value": "male",
+                  "type": "text"
+                },
+                {
+                  "key": "relation",
+                  "value": "brother",
+                  "type": "text"
+                },
+                {
+                  "key": "weight",
+                  "value": "61",
+                  "type": "text"
+                },
+                {
+                  "key": "height",
+                  "value": "5.4",
+                  "type": "text"
+                },
+                {
+                  "key": "bloodGroup",
+                  "value": " B+",
+                  "type": "text"
+                },
+                {
+                  "key": "profile",
+                  "type": "file",
+                  "src": "/Users/sarveshpatel/Downloads/dummy.jpeg"
+                },
+                {
+                  "key": "memberId",
+                  "value": "8",
+                  "type": "text"
+                },
+                {
+                  "key": "phone",
+                  "value": "1234567890",
+                  "type": "text"
+                },
+                {
+                  "key": "dob",
+                  "value": "2021-05-14",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url}}/api/member",
+              "host": ["{{url}}"],
+              "path": ["api", "member"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Member-delete",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{patient-token}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"memberId\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/api/member",
+              "host": ["{{url}}"],
+              "path": ["api", "member"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Doctor",
+      "item": [
+        {
+          "name": "Get-doctor-list",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{patient-token}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"symptomIds\": [],\n    \"specialityIds\": [8],\n    \"latitude\": null,\n    \"longitude\": null,\n    \"location\": \"Noida\",\n    \"search\": \"\"\n}"
+            },
+            "url": {
+              "raw": "{{url}}/api/patient/doctor",
+              "host": ["{{url}}"],
+              "path": ["api", "patient", "doctor"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Doctor-details",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{patient-token}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/api/patient/doctor?doctorId=49",
+              "host": ["{{url}}"],
+              "path": ["api", "patient", "doctor"],
+              "query": [
+                {
+                  "key": "doctorId",
+                  "value": "49"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Apply Coupon",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{patient-token}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/api/patient/doctor/applybalance?doctorId=49&appointmentType=teleConsultation&type=coupon&coupon=save100",
+              "host": ["{{url}}"],
+              "path": ["api", "patient", "doctor", "applybalance"],
+              "query": [
+                {
+                  "key": "doctorId",
+                  "value": "49"
+                },
+                {
+                  "key": "appointmentType",
+                  "value": "teleConsultation"
+                },
+                {
+                  "key": "type",
+                  "value": "coupon"
+                },
+                {
+                  "key": "coupon",
+                  "value": "save100"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Payment Info",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{patient-token}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/api/patient/doctor/paymentInfo?doctorId=32&appointmentType=teleConsultation",
+              "host": ["{{url}}"],
+              "path": ["api", "patient", "doctor", "paymentInfo"],
+              "query": [
+                {
+                  "key": "doctorId",
+                  "value": "32"
+                },
+                {
+                  "key": "appointmentType",
+                  "value": "teleConsultation"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Symptoms",
+      "item": [
+        {
+          "name": "Symptoms-list",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{patient-token}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/api/patient/symtom",
+              "host": ["{{url}}"],
+              "path": ["api", "patient", "symtom"],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "fever",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Slots",
+      "item": [
+        {
+          "name": "Doctor-slot-list",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{patient-token}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/api/patient/slots?doctorId=90&date=2022-01-24&appointmentType=inClinic",
+              "host": ["{{url}}"],
+              "path": ["api", "patient", "slots"],
+              "query": [
+                {
+                  "key": "doctorId",
+                  "value": "90"
+                },
+                {
+                  "key": "date",
+                  "value": "2022-01-24"
+                },
+                {
+                  "key": "appointmentType",
+                  "value": "inClinic"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Appointments",
+      "item": [
+        {
+          "name": "Appointment-list",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{patient-token}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/api/appointment?date=2021-12-22&appointmentType=teleConsultation",
+              "host": ["{{url}}"],
+              "path": ["api", "appointment"],
+              "query": [
+                {
+                  "key": "date",
+                  "value": "2021-12-22"
+                },
+                {
+                  "key": "appointmentType",
+                  "value": "teleConsultation"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get-single-appointment",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{patient-token}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/api/appointment/191",
+              "host": ["{{url}}"],
+              "path": ["api", "appointment", "191"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Appointment-Create",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{patient-token}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "vendorId",
+                  "value": "32",
+                  "type": "text"
+                },
+                {
+                  "key": "memberId",
+                  "value": "4",
+                  "type": "text"
+                },
+                {
+                  "key": "details",
+                  "value": "please type some text here",
+                  "type": "text"
+                },
+                {
+                  "key": "startTime",
+                  "value": "02:40",
+                  "type": "text"
+                },
+                {
+                  "key": "date",
+                  "value": "2022-01-05",
+                  "type": "text"
+                },
+                {
+                  "key": "coupon",
+                  "value": "save50",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "medicalAlerts[0][medicalAlertId]",
+                  "value": "1",
+                  "type": "text"
+                },
+                {
+                  "key": "medicalAlerts[0][value]",
+                  "value": "false",
+                  "type": "text"
+                },
+                {
+                  "key": "medicalAlerts[1][medicalAlertId]",
+                  "value": "2",
+                  "type": "text"
+                },
+                {
+                  "key": "medicalAlerts[1][value]",
+                  "value": "true",
+                  "type": "text"
+                },
+                {
+                  "key": "symptoms[0][symptomId]",
+                  "value": "1",
+                  "type": "text"
+                },
+                {
+                  "key": "symptoms[0][description]",
+                  "value": "fever description",
+                  "type": "text"
+                },
+                {
+                  "key": "symptoms[1][symptomId]",
+                  "value": "2",
+                  "type": "text"
+                },
+                {
+                  "key": "symptoms[1][description]",
+                  "value": "cough description",
+                  "type": "text"
+                },
+                {
+                  "key": "attachments",
+                  "type": "file",
+                  "src": "/Users/sarveshpatel/Downloads/mm.png"
+                },
+                {
+                  "key": "description",
+                  "value": "hello this is description",
+                  "type": "text"
+                },
+                {
+                  "key": "appointmentType",
+                  "value": "inClinic",
+                  "type": "text"
+                },
+                {
+                  "key": "couponId",
+                  "value": "",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "isWallet",
+                  "value": "true",
+                  "type": "text"
+                },
+                {
+                  "key": "actualAmount",
+                  "value": "100",
+                  "type": "text"
+                },
+                {
+                  "key": "applyWalletAmount",
+                  "value": "10",
+                  "type": "text"
+                },
+                {
+                  "key": "transactionId",
+                  "value": "q9834hrqw8hre80q9",
+                  "type": "text"
+                },
+                {
+                  "key": "paymentStatus",
+                  "value": "success",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url}}/api/appointment",
+              "host": ["{{url}}"],
+              "path": ["api", "appointment"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Appointment-Cancle",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{patient-token}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"appointmentId\": 35\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/api/appointment",
+              "host": ["{{url}}"],
+              "path": ["api", "appointment"],
+              "query": [
+                {
+                  "key": "",
+                  "value": "",
+                  "disabled": true
+                },
+                {
+                  "key": "",
+                  "value": "",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Make-payment",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{patient-token}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"identifier\": \"MTnqqt4KvznTe2rOyUNX\", \n    \"appointmentId\": 38, \n    \"paymentStatus\": \"success\", \n    \"couponId\": null, \n    \"transactionId\": \"qoq43893rn4\", \n    \"actualAmount\": 50, \n    \"paybleAmount\": 50, \n    \"discountAmount\": 0, \n    \"details\": {},\n    \"isWallet\": true,\n    \"applyWalletAmount\": 65\n}"
+            },
+            "url": {
+              "raw": "{{url}}/api/appointment/payment",
+              "host": ["{{url}}"],
+              "path": ["api", "appointment", "payment"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Download-report",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{patient-token}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/api/appointment/report/303",
+              "host": ["{{url}}"],
+              "path": ["api", "appointment", "report", "303"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Generate token",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{patient-token}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/api/appointment/token/277",
+              "host": ["{{url}}"],
+              "path": ["api", "appointment", "token", "277"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Health-feed",
+      "item": [
+        {
+          "name": "Health-feed-list-video",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{patient-token}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/api/patient/health-feed/video",
+              "host": ["{{url}}"],
+              "path": ["api", "patient", "health-feed", "video"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Health-feed-list-blog",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{patient-token}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/api/patient/health-feed/blog",
+              "host": ["{{url}}"],
+              "path": ["api", "patient", "health-feed", "blog"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Health-feed-list",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{patient-token}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/api/patient/health-feed",
+              "host": ["{{url}}"],
+              "path": ["api", "patient", "health-feed"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Help-report",
+      "item": [
+        {
+          "name": "Help-report",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{patient-token}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"helpQuestionId\":1,\r\n    \"message\":\"testing\"   \r\n}"
+            },
+            "url": {
+              "raw": "{{url}}/api/patient/help-report",
+              "host": ["{{url}}"],
+              "path": ["api", "patient", "help-report"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Help-question",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoiVVNFUiIsInN1YiI6Miwia2V5IjoiSGlNSFhTenVBZU1SYWFOaUtpUDkiLCJpYXQiOjE2NDk2OTcwMzk1MzIsImlzcyI6IkRvY0ZsaXgtVVNFUiIsImV4cCI6MTY2NTI0OTAzOTUzMn0.GveyFsvJsaN96tl914bfOEgy4KpswWHGABBo1luG66A",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/api/patient/help-question",
+              "host": ["{{url}}"],
+              "path": ["api", "patient", "help-question"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Report Type",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoiVVNFUiIsInN1YiI6Miwia2V5IjoiSGlNSFhTenVBZU1SYWFOaUtpUDkiLCJpYXQiOjE2NDk2OTcwMzk1MzIsImlzcyI6IkRvY0ZsaXgtVVNFUiIsImV4cCI6MTY2NTI0OTAzOTUzMn0.GveyFsvJsaN96tl914bfOEgy4KpswWHGABBo1luG66A",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/api/patient/help-report/get-report-type",
+              "host": ["{{url}}"],
+              "path": ["api", "patient", "help-report", "get-report-type"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Is Pin Set",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoiVVNFUiIsInN1YiI6Miwia2V5IjoiSGlNSFhTenVBZU1SYWFOaUtpUDkiLCJpYXQiOjE2NDk2OTcwMzk1MzIsImlzcyI6IkRvY0ZsaXgtVVNFUiIsImV4cCI6MTY2NTI0OTAzOTUzMn0.GveyFsvJsaN96tl914bfOEgy4KpswWHGABBo1luG66A",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"pin\": 1257\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/api/user/is-pin-set",
+              "host": ["{{url}}"],
+              "path": ["api", "user", "is-pin-set"],
+              "query": [
+                {
+                  "key": "Authorization",
+                  "value": null,
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Download Report",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoiVVNFUiIsInN1YiI6Miwia2V5IjoiSGlNSFhTenVBZU1SYWFOaUtpUDkiLCJpYXQiOjE2NDk2OTcwMzk1MzIsImlzcyI6IkRvY0ZsaXgtVVNFUiIsImV4cCI6MTY2NTI0OTAzOTUzMn0.GveyFsvJsaN96tl914bfOEgy4KpswWHGABBo1luG66A",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/api/patient/help-report/download-report",
+              "host": ["{{url}}"],
+              "path": ["api", "patient", "help-report", "download-report"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Pedometer",
+      "item": [
+        {
+          "name": "Upsert Pedometer",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{patient-token}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"step\":5550\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/api/patient/upsert-pedometer",
+              "host": ["{{url}}"],
+              "path": ["api", "patient", "upsert-pedometer"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Favorite-Health-Parameter-video-and-blogs",
+      "item": [
+        {
+          "name": "Add-to-Favorite-video-or-blog",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{patient-token}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"subCategoryId\": 2,\n    \"healthParameterId\": 17\n}"
+            },
+            "url": {
+              "raw": "{{url}}/api/favorite/health-parameter",
+              "host": ["{{url}}"],
+              "path": ["api", "favorite", "health-parameter"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Subcategory-graph",
+      "item": [
+        {
+          "name": "subcategory-graph-daily",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{patient-token}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/api/graph-subcategory/daily?subCategoryId=11",
+              "host": ["{{url}}"],
+              "path": ["api", "graph-subcategory", "daily"],
+              "query": [
+                {
+                  "key": "subCategoryId",
+                  "value": "11"
+                },
+                {
+                  "key": "memberId",
+                  "value": "31",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "subcategory-graph-weekly",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{patient-token}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/api/graph-subcategory/weekly?subCategoryId=11",
+              "host": ["{{url}}"],
+              "path": ["api", "graph-subcategory", "weekly"],
+              "query": [
+                {
+                  "key": "subCategoryId",
+                  "value": "11"
+                },
+                {
+                  "key": "memberId",
+                  "value": "31",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "subcategory-graph-monthly",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{patient-token}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/api/graph-subcategory/monthly?subCategoryId=13",
+              "host": ["{{url}}"],
+              "path": ["api", "graph-subcategory", "monthly"],
+              "query": [
+                {
+                  "key": "subCategoryId",
+                  "value": "13"
+                },
+                {
+                  "key": "memberId",
+                  "value": "49",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "subcategory-graph-yearly",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{patient-token}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/api/graph-subcategory/yearly?subCategoryId=11",
+              "host": ["{{url}}"],
+              "path": ["api", "graph-subcategory", "yearly"],
+              "query": [
+                {
+                  "key": "subCategoryId",
+                  "value": "11"
+                },
+                {
+                  "key": "memberId",
+                  "value": "49",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Favourite-graph",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{patient-token}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/api/graph-subcategory/favourite",
+              "host": ["{{url}}"],
+              "path": ["api", "graph-subcategory", "favourite"],
+              "query": [
+                {
+                  "key": "memberId",
+                  "value": "31",
+                  "disabled": true
+                },
+                {
+                  "key": "categoryId",
+                  "value": "2",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Patient-profile",
+      "item": [
+        {
+          "name": "Get-profile-detail",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoiVVNFUiIsInN1YiI6Miwia2V5IjoiSGlNSFhTenVBZU1SYWFOaUtpUDkiLCJpYXQiOjE2NDk2OTIyMDY2NjMsImlzcyI6IkRvY0ZsaXgtVVNFUiIsImV4cCI6MTY2NTI0NDIwNjY2M30.CcP_5VyaQAMyyaBTDEV-ZklbEeyVvQjDMP9qUgfETmo",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "pin",
+                  "value": "12345",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url}}/api/patient-profile/set-pin",
+              "host": ["{{url}}"],
+              "path": ["api", "patient-profile", "set-pin"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Upload-profile-image",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{patient-token}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "profile",
+                  "type": "file",
+                  "src": "/Users/sarveshpatel/Downloads/dummy.jpeg"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url}}/api/patient-profile",
+              "host": ["{{url}}"],
+              "path": ["api", "patient-profile"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update-profile-detail",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{patient-token}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"key\": \"age\",\n    \"value\": \"26\"\n}"
+            },
+            "url": {
+              "raw": "{{url}}/api/patient-profile",
+              "host": ["{{url}}"],
+              "path": ["api", "patient-profile"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Set-Pin",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoiVVNFUiIsInN1YiI6Miwia2V5IjoiSGlNSFhTenVBZU1SYWFOaUtpUDkiLCJpYXQiOjE2NDk2OTcwMzk1MzIsImlzcyI6IkRvY0ZsaXgtVVNFUiIsImV4cCI6MTY2NTI0OTAzOTUzMn0.GveyFsvJsaN96tl914bfOEgy4KpswWHGABBo1luG66A",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"pin\": 1257,\n    \"confirmPin\": 1257\n}"
+            },
+            "url": {
+              "raw": "{{url}}/api/patient-profile/set-pin",
+              "host": ["{{url}}"],
+              "path": ["api", "patient-profile", "set-pin"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Pin",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoiVVNFUiIsInN1YiI6Miwia2V5IjoiSGlNSFhTenVBZU1SYWFOaUtpUDkiLCJpYXQiOjE2NDk2OTcwMzk1MzIsImlzcyI6IkRvY0ZsaXgtVVNFUiIsImV4cCI6MTY2NTI0OTAzOTUzMn0.GveyFsvJsaN96tl914bfOEgy4KpswWHGABBo1luG66A",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"oldPin\": 1259,\n    \"newPin\": 1260\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/api/patient-profile/update-pin",
+              "host": ["{{url}}"],
+              "path": ["api", "patient-profile", "update-pin"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Medical-Alert",
+      "item": [
+        {
+          "name": "Medical-alert-list",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{patient-token}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"symptomIds\": [1],\n    \"specialityIds\": [1]\n}"
+            },
+            "url": {
+              "raw": "{{url}}/api/patient/medical-alert",
+              "host": ["{{url}}"],
+              "path": ["api", "patient", "medical-alert"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Device-token",
+      "item": [
+        {
+          "name": "Update-device-token",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{patient-token}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"deviceToken\": \"xyz\"\n}"
+            },
+            "url": {
+              "raw": "{{url}}/api/patient/device-token",
+              "host": ["{{url}}"],
+              "path": ["api", "patient", "device-token"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Speciality",
+      "item": [
+        {
+          "name": "Speciality-List",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{patient-token}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/api/patient/speciality",
+              "host": ["{{url}}"],
+              "path": ["api", "patient", "speciality"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get-single-Speciality",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{patient-token}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/api/patient/speciality/3",
+              "host": ["{{url}}"],
+              "path": ["api", "patient", "speciality", "3"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Prescription",
+      "item": [
+        {
+          "name": "Prescription-details",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{patient-token}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/api/patient/prescription?appointmentId=291",
+              "host": ["{{url}}"],
+              "path": ["api", "patient", "prescription"],
+              "query": [
+                {
+                  "key": "appointmentId",
+                  "value": "291"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Banners",
+      "item": [
+        {
+          "name": "Banner List",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{patient-token}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/api/patient/banner",
+              "host": ["{{url}}"],
+              "path": ["api", "patient", "banner"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Dashboard",
+      "item": [
+        {
+          "name": "Featured symptoms for teleConsultation",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{patient-token}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/api/patient/symtom/teleConsultationSymptoms",
+              "host": ["{{url}}"],
+              "path": ["api", "patient", "symtom", "teleConsultationSymptoms"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Featured symptoms for inClinic",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{patient-token}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/api/patient/symtom/inClinicSymptoms",
+              "host": ["{{url}}"],
+              "path": ["api", "patient", "symtom", "inClinicSymptoms"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Featured speciality for teleConsultation",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{patient-token}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/api/patient/speciality/teleConsultationSpeciality",
+              "host": ["{{url}}"],
+              "path": [
+                "api",
+                "patient",
+                "speciality",
+                "teleConsultationSpeciality"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Featured speciality for inClinic",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{patient-token}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/api/patient/speciality/inClinicSpeciality",
+              "host": ["{{url}}"],
+              "path": ["api", "patient", "speciality", "inClinicSpeciality"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Upcomming-teleconsultation",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{patient-token}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/api/appointment/upcomming?appointmentType=teleConsultation",
+              "host": ["{{url}}"],
+              "path": ["api", "appointment", "upcomming"],
+              "query": [
+                {
+                  "key": "appointmentType",
+                  "value": "teleConsultation"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Upcomming-inClinic",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{patient-token}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/api/appointment/upcomming?appointmentType=inClinic",
+              "host": ["{{url}}"],
+              "path": ["api", "appointment", "upcomming"],
+              "query": [
+                {
+                  "key": "appointmentType",
+                  "value": "inClinic"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Contact Us",
+      "item": [
+        {
+          "name": "Add Request",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{patient-token}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"type\": \"asd\",\n    \"description\": \"asdfasdf\"\n}"
+            },
+            "url": {
+              "raw": "{{url}}/api/patient/contactus",
+              "host": ["{{url}}"],
+              "path": ["api", "patient", "contactus"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Version",
+      "item": [
+        {
+          "name": "Get Version No",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{doctor-token}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/api/version",
+              "host": ["{{url}}"],
+              "path": ["api", "version"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Drs",
+      "item": [
+        {
+          "name": "User Answer",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoiVVNFUiIsInN1YiI6NDEsImtleSI6IklwU1o4b0hNdENzd0VkaVZXMG5wIiwiaWF0IjoxNjQ0MzMyMzc0ODg5LCJpc3MiOiJEb2NGbGl4LVVTRVIiLCJleHAiOjE2NTk4ODQzNzQ4ODl9.De3Xr7q60nW1lKzZYIZwJGLVzm3J4cI336bq5NlYu-M",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"answer\": [{\"questionId\": 9, \"answerId\": 10},{\"questionId\": 9, \"answerId\": 9}]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/api/drs/drs-user-answer",
+              "host": ["{{url}}"],
+              "path": ["api", "drs", "drs-user-answer"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Drs Article Blog",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoiVVNFUiIsInN1YiI6NDEsImtleSI6IklwU1o4b0hNdENzd0VkaVZXMG5wIiwiaWF0IjoxNjQ0MzMyMzc0ODg5LCJpc3MiOiJEb2NGbGl4LVVTRVIiLCJleHAiOjE2NTk4ODQzNzQ4ODl9.De3Xr7q60nW1lKzZYIZwJGLVzm3J4cI336bq5NlYu-M",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"point\":\"1\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/api/drs/drs-article-blog",
+              "host": ["{{url}}"],
+              "path": ["api", "drs", "drs-article-blog"],
+              "query": [
+                {
+                  "key": "Authorization",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoiVVNFUiIsInN1YiI6NDEsImtleSI6IklwU1o4b0hNdENzd0VkaVZXMG5wIiwiaWF0IjoxNjQ0MzMyMzc0ODg5LCJpc3MiOiJEb2NGbGl4LVVTRVIiLCJleHAiOjE2NTk4ODQzNzQ4ODl9.De3Xr7q60nW1lKzZYIZwJGLVzm3J4cI336bq5NlYu-M",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Drs Question",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoiVVNFUiIsInN1YiI6NDEsImtleSI6IklwU1o4b0hNdENzd0VkaVZXMG5wIiwiaWF0IjoxNjQ0MzMyMzc0ODg5LCJpc3MiOiJEb2NGbGl4LVVTRVIiLCJleHAiOjE2NTk4ODQzNzQ4ODl9.De3Xr7q60nW1lKzZYIZwJGLVzm3J4cI336bq5NlYu-M",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/api/drs/drs-question",
+              "host": ["{{url}}"],
+              "path": ["api", "drs", "drs-question"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Drs Video Blog",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoiVVNFUiIsInN1YiI6NDEsImtleSI6IklwU1o4b0hNdENzd0VkaVZXMG5wIiwiaWF0IjoxNjQ0MzMyMzc0ODg5LCJpc3MiOiJEb2NGbGl4LVVTRVIiLCJleHAiOjE2NTk4ODQzNzQ4ODl9.De3Xr7q60nW1lKzZYIZwJGLVzm3J4cI336bq5NlYu-M",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"point\":\"3\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/api/drs/drs-video-blog",
+              "host": ["{{url}}"],
+              "path": ["api", "drs", "drs-video-blog"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Drs Suggestion",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoiVVNFUiIsInN1YiI6NDEsImtleSI6IklwU1o4b0hNdENzd0VkaVZXMG5wIiwiaWF0IjoxNjQ0MzMyMzc0ODg5LCJpc3MiOiJEb2NGbGl4LVVTRVIiLCJleHAiOjE2NTk4ODQzNzQ4ODl9.De3Xr7q60nW1lKzZYIZwJGLVzm3J4cI336bq5NlYu-M",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"point\":\"2\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/api/drs/drs-suggestion",
+              "host": ["{{url}}"],
+              "path": ["api", "drs", "drs-suggestion"],
+              "query": [
+                {
+                  "key": "Authorization",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoiVVNFUiIsInN1YiI6NDEsImtleSI6IklwU1o4b0hNdENzd0VkaVZXMG5wIiwiaWF0IjoxNjQ0MzMyMzc0ODg5LCJpc3MiOiJEb2NGbGl4LVVTRVIiLCJleHAiOjE2NTk4ODQzNzQ4ODl9.De3Xr7q60nW1lKzZYIZwJGLVzm3J4cI336bq5NlYu-M",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Drs All Question",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoiVVNFUiIsInN1YiI6NDEsImtleSI6IklwU1o4b0hNdENzd0VkaVZXMG5wIiwiaWF0IjoxNjQ0MzMyMzc0ODg5LCJpc3MiOiJEb2NGbGl4LVVTRVIiLCJleHAiOjE2NTk4ODQzNzQ4ODl9.De3Xr7q60nW1lKzZYIZwJGLVzm3J4cI336bq5NlYu-M",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/api/drs/drs-all-question",
+              "host": ["{{url}}"],
+              "path": ["api", "drs", "drs-all-question"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Question of Day",
+      "item": [
+        {
+          "name": "Question Detail",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "{{patient-token}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/api/questionOfDays",
+              "host": ["{{url}}"],
+              "path": ["api", "questionOfDays"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Submit Question",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "{{patient-token}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"questionId\": 6,\n    \"answerId\": 7\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/api/questionOfDays",
+              "host": ["{{url}}"],
+              "path": ["api", "questionOfDays"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Quiz",
+      "item": [
+        {
+          "name": "Quiz List",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "{{patient-token}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/api/quizes/quiz?categoryId=2",
+              "host": ["{{url}}"],
+              "path": ["api", "quizes", "quiz"],
+              "query": [
+                {
+                  "key": "categoryId",
+                  "value": "2"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Question",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "{{patient-token}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/api/quizes/question?quizId=3",
+              "host": ["{{url}}"],
+              "path": ["api", "quizes", "question"],
+              "query": [
+                {
+                  "key": "quizId",
+                  "value": "3"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Quiz category",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "{{patient-token}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/api/quizes/category",
+              "host": ["{{url}}"],
+              "path": ["api", "quizes", "category"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Submit quiz",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "{{patient-token}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"answers\": [],\n    \"quizId\": 3\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/api/quizes/submit",
+              "host": ["{{url}}"],
+              "path": ["api", "quizes", "submit"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Step Counter",
+      "item": [
+        {
+          "name": "Step counter list",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "{{patient-token}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/api/stepCounter",
+              "host": ["{{url}}"],
+              "path": ["api", "stepCounter"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Step Counter",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "{{patient-token}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"stepCounters\": [\n        {\n            \"steps\": 4000,\n            \"date\": \"2022-04-01\"\n        },\n        {\n            \"steps\": 4000,\n            \"date\": \"2022-04-01\"\n        }\n    ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/api/stepCounter",
+              "host": ["{{url}}"],
+              "path": ["api", "stepCounter"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Step counter weekly graph",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "{{patient-token}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/api/stepCounter/weekly",
+              "host": ["{{url}}"],
+              "path": ["api", "stepCounter", "weekly"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Step counter monthly graph",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "{{patient-token}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/api/stepCounter/monthly",
+              "host": ["{{url}}"],
+              "path": ["api", "stepCounter", "monthly"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Step counter yearly graph",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "{{patient-token}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/api/stepCounter/yearly",
+              "host": ["{{url}}"],
+              "path": ["api", "stepCounter", "yearly"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Patient-Report",
+      "item": [
+        {
+          "name": "Save Patient Report",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoiVVNFUiIsInN1YiI6Miwia2V5IjoiSGlNSFhTenVBZU1SYWFOaUtpUDkiLCJpYXQiOjE2NTUzMDE2NTgzOTUsImlzcyI6IkRvY0ZsaXgtVVNFUiIsImV4cCI6MTY3MDg1MzY1ODM5NX0.x4j8ZYK7ypK7do-Dr1JrNBNP_8p4rU-Dj09Fdqe_Us0",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"reportCategoryType\": \"2\",\n    \"doctorName\": \"Test\",\n    \"documentName\": \"TIME\",\n    \"documentDate\": \"2022-02-04\",\n    \"attachment\": \"labreport/1655304921012-Policy_-_Acceptable_Use.pdf\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/api/patient/report/save-patient-report",
+              "host": ["{{url}}"],
+              "path": ["api", "patient", "report", "save-patient-report"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Upload Report",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoiVVNFUiIsInN1YiI6Miwia2V5IjoiSGlNSFhTenVBZU1SYWFOaUtpUDkiLCJpYXQiOjE2NTUzMDE2NTgzOTUsImlzcyI6IkRvY0ZsaXgtVVNFUiIsImV4cCI6MTY3MDg1MzY1ODM5NX0.x4j8ZYK7ypK7do-Dr1JrNBNP_8p4rU-Dj09Fdqe_Us0",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "report",
+                  "type": "file",
+                  "src": "/Users/amanojha/Downloads/Policy_-_Acceptable_Use.pdf"
+                },
+                {
+                  "key": "type",
+                  "value": "2",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url}}/api/patient/report/upload-report",
+              "host": ["{{url}}"],
+              "path": ["api", "patient", "report", "upload-report"],
+              "query": [
+                {
+                  "key": "Authorization",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoiVVNFUiIsInN1YiI6Miwia2V5IjoiSGlNSFhTenVBZU1SYWFOaUtpUDkiLCJpYXQiOjE2NDk2OTcwMzk1MzIsImlzcyI6IkRvY0ZsaXgtVVNFUiIsImV4cCI6MTY2NTI0OTAzOTUzMn0.GveyFsvJsaN96tl914bfOEgy4KpswWHGABBo1luG66A",
+                  "disabled": true
+                },
+                {
+                  "key": "Accept",
+                  "value": "application/json",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Save Patient Lab Report",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoiVVNFUiIsInN1YiI6Miwia2V5IjoiSGlNSFhTenVBZU1SYWFOaUtpUDkiLCJpYXQiOjE2NTUzMDE2NTgzOTUsImlzcyI6IkRvY0ZsaXgtVVNFUiIsImV4cCI6MTY3MDg1MzY1ODM5NX0.x4j8ZYK7ypK7do-Dr1JrNBNP_8p4rU-Dj09Fdqe_Us0",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"doctorName\": \"AMAN\",\n    \"documentName\": \"Aama-PDF\",\n    \"documentDate\": \"2022-06-19\",\n    \"attachment\": \"labreport/Policy_-_Acceptable_Use.pdf\",\n    \"pathology\": \"Aman-LAB\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/api/patient/report/save-patient-lab-report",
+              "host": ["{{url}}"],
+              "path": ["api", "patient", "report", "save-patient-lab-report"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Save Patient Manual Report",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoiVVNFUiIsInN1YiI6Miwia2V5IjoiSGlNSFhTenVBZU1SYWFOaUtpUDkiLCJpYXQiOjE2NDk2OTcwMzk1MzIsImlzcyI6IkRvY0ZsaXgtVVNFUiIsImV4cCI6MTY2NTI0OTAzOTUzMn0.GveyFsvJsaN96tl914bfOEgy4KpswWHGABBo1luG66A",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"doctorName\": \"Test\",\n    \"documentName\": \"RRR\",\n    \"documentDate\": \"2022-02-04\",\n    \"chiefComplain\": [\"A\",\"B\",\"C\"],\n    \"otherComplain\": \"Test\",\n    \"historyPoint\": \"Test\",\n    \"lab\": \"AMN\",\n    \"examination\": [\"A\",\"B\",\"C\"],\n    \"diagnosis\": [\"A\",\"B\",\"C\"],\n    \"instruction\": \"Testing\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/api/patient/report/save-patient-manual-report",
+              "host": ["{{url}}"],
+              "path": ["api", "patient", "report", "save-patient-manual-report"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Patient Report File List",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoiVVNFUiIsInN1YiI6Miwia2V5IjoiSGlNSFhTenVBZU1SYWFOaUtpUDkiLCJpYXQiOjE2NTUzMDE2NTgzOTUsImlzcyI6IkRvY0ZsaXgtVVNFUiIsImV4cCI6MTY3MDg1MzY1ODM5NX0.x4j8ZYK7ypK7do-Dr1JrNBNP_8p4rU-Dj09Fdqe_Us0",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/api/patient/report/get-patient-report-file-list/2022-06-19",
+              "host": ["{{url}}"],
+              "path": [
+                "api",
+                "patient",
+                "report",
+                "get-patient-report-file-list",
+                "2022-06-19"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Patient Lab Report Tests",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoiVVNFUiIsInN1YiI6Miwia2V5IjoiSGlNSFhTenVBZU1SYWFOaUtpUDkiLCJpYXQiOjE2NDk2OTcwMzk1MzIsImlzcyI6IkRvY0ZsaXgtVVNFUiIsImV4cCI6MTY2NTI0OTAzOTUzMn0.GveyFsvJsaN96tl914bfOEgy4KpswWHGABBo1luG66A",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/api/patient/report/get-patient-lab-report-tests",
+              "host": ["{{url}}"],
+              "path": [
+                "api",
+                "patient",
+                "report",
+                "get-patient-lab-report-tests"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Lis Parameter Units",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoiVVNFUiIsInN1YiI6Miwia2V5IjoiSGlNSFhTenVBZU1SYWFOaUtpUDkiLCJpYXQiOjE2NDk2OTcwMzk1MzIsImlzcyI6IkRvY0ZsaXgtVVNFUiIsImV4cCI6MTY2NTI0OTAzOTUzMn0.GveyFsvJsaN96tl914bfOEgy4KpswWHGABBo1luG66A",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/api/patient/report/get-lis-parameter-units",
+              "host": ["{{url}}"],
+              "path": ["api", "patient", "report", "get-lis-parameter-units"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Save Patient Lab Manual Report",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoiVVNFUiIsInN1YiI6NDEsImtleSI6IklwU1o4b0hNdENzd0VkaVZXMG5wIiwiaWF0IjoxNjQ0MzMyMzc0ODg5LCJpc3MiOiJEb2NGbGl4LVVTRVIiLCJleHAiOjE2NTk4ODQzNzQ4ODl9.De3Xr7q60nW1lKzZYIZwJGLVzm3J4cI336bq5NlYu-M",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"doctorName\":\"Lab\",\n    \"documentName\":\"Lab Test\",\n    \"documentDate\":\"2022-11-19\",\n    \"pathology\":\"AMAN-Lab\",\n    \"labTestId\":\"2\",\n    \"parameters\": [{\"parameterId\": 2, \"parameterUnitId\": 1, \"parameterValue\":\"WBC\"},{\"parameterId\": 3, \"parameterUnitId\": 1, \"parameterValue\":\"RBC\"}]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/api/patient/report/save-patient-lab-manual-report",
+              "host": ["{{url}}"],
+              "path": [
+                "api",
+                "patient",
+                "report",
+                "save-patient-lab-manual-report"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Patient Report",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoiVVNFUiIsInN1YiI6Miwia2V5IjoiSGlNSFhTenVBZU1SYWFOaUtpUDkiLCJpYXQiOjE2NDk2OTcwMzk1MzIsImlzcyI6IkRvY0ZsaXgtVVNFUiIsImV4cCI6MTY2NTI0OTAzOTUzMn0.GveyFsvJsaN96tl914bfOEgy4KpswWHGABBo1luG66A",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"reportId\":\"24\",\n    \"doctorName\": \"Test\",\n    \"documentName\": \"HHH\",\n    \"documentDate\": \"2022-06-05\",\n    \"attachment\": \"precription/1627012844-s.jpeg\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/api/patient/report/update-patient-report",
+              "host": ["{{url}}"],
+              "path": ["api", "patient", "report", "update-patient-report"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Patient Lab Report",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoiVVNFUiIsInN1YiI6Miwia2V5IjoiSGlNSFhTenVBZU1SYWFOaUtpUDkiLCJpYXQiOjE2NDk2OTcwMzk1MzIsImlzcyI6IkRvY0ZsaXgtVVNFUiIsImV4cCI6MTY2NTI0OTAzOTUzMn0.GveyFsvJsaN96tl914bfOEgy4KpswWHGABBo1luG66A",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"doctorName\": \"Test-Lab\",\n    \"documentName\": \"KGF\",\n    \"documentDate\": \"2022-06-05\",\n    \"attachment\": \"labreport/1627012844-s.jpeg\",\n    \"pathology\": \"NewLab\",\n    \"reportId\":\"25\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/api/patient/report/update-patient-lab-report",
+              "host": ["{{url}}"],
+              "path": ["api", "patient", "report", "update-patient-lab-report"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Patient Manual Report",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoiVVNFUiIsInN1YiI6Miwia2V5IjoiSGlNSFhTenVBZU1SYWFOaUtpUDkiLCJpYXQiOjE2NDk2OTcwMzk1MzIsImlzcyI6IkRvY0ZsaXgtVVNFUiIsImV4cCI6MTY2NTI0OTAzOTUzMn0.GveyFsvJsaN96tl914bfOEgy4KpswWHGABBo1luG66A",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"reportId\":\"24\",\n    \"doctorName\": \"Test\",\n    \"documentName\": \"RRR\",\n    \"documentDate\": \"2022-06-08\",\n    \"chiefComplain\": [\"A\",\"B\",\"C\"],\n    \"otherComplain\": \"Test\",\n    \"historyPoint\": \"Test\",\n    \"lab\": \"KKK\",\n    \"examination\": [\"A\",\"B\",\"C\"],\n    \"diagnosis\": [\"A\",\"B\",\"C\"],\n    \"instruction\": \"Testing\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/api/patient/report/update-patient-manual-report",
+              "host": ["{{url}}"],
+              "path": [
+                "api",
+                "patient",
+                "report",
+                "update-patient-manual-report"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Patient Lab Manual Report",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoiVVNFUiIsInN1YiI6NDEsImtleSI6IklwU1o4b0hNdENzd0VkaVZXMG5wIiwiaWF0IjoxNjQ0MzMyMzc0ODg5LCJpc3MiOiJEb2NGbGl4LVVTRVIiLCJleHAiOjE2NTk4ODQzNzQ4ODl9.De3Xr7q60nW1lKzZYIZwJGLVzm3J4cI336bq5NlYu-M",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"reportId\":24,\n    \"doctorName\":\"Lab\",\n    \"documentName\":\"Lab Test\",\n    \"documentDate\":\"2022-06-05\",\n    \"pathology\":\"AMAN-TEST-LAB\",\n    \"labTestId\":\"3\",\n    \"parameters\": [{\"parameterId\": 4, \"parameterUnitId\": 1, \"parameterValue\":\"BLOOD\"}]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/api/patient/report/update-patient-lab-manual-report",
+              "host": ["{{url}}"],
+              "path": [
+                "api",
+                "patient",
+                "report",
+                "update-patient-lab-manual-report"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Report",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoiVVNFUiIsInN1YiI6Miwia2V5IjoiSGlNSFhTenVBZU1SYWFOaUtpUDkiLCJpYXQiOjE2NTUzMDE2NTgzOTUsImlzcyI6IkRvY0ZsaXgtVVNFUiIsImV4cCI6MTY3MDg1MzY1ODM5NX0.x4j8ZYK7ypK7do-Dr1JrNBNP_8p4rU-Dj09Fdqe_Us0",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/api/patient/report/delete-report/26",
+              "host": ["{{url}}"],
+              "path": ["api", "patient", "report", "delete-report", "26"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Report",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoiVVNFUiIsInN1YiI6Miwia2V5IjoiSGlNSFhTenVBZU1SYWFOaUtpUDkiLCJpYXQiOjE2NTUzMDE2NTgzOTUsImlzcyI6IkRvY0ZsaXgtVVNFUiIsImV4cCI6MTY3MDg1MzY1ODM5NX0.x4j8ZYK7ypK7do-Dr1JrNBNP_8p4rU-Dj09Fdqe_Us0",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"filePath\":\"labreport/1655304921012-Policy_-_Acceptable_Use.pdf\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/api/patient/report/view-report",
+              "host": ["{{url}}"],
+              "path": ["api", "patient", "report", "view-report"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Value Lab Report Preview",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoiVVNFUiIsInN1YiI6NDEsImtleSI6IklwU1o4b0hNdENzd0VkaVZXMG5wIiwiaWF0IjoxNjQ0MzMyMzc0ODg5LCJpc3MiOiJEb2NGbGl4LVVTRVIiLCJleHAiOjE2NTk4ODQzNzQ4ODl9.De3Xr7q60nW1lKzZYIZwJGLVzm3J4cI336bq5NlYu-M",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"doctorName\":\"Lab\",\n    \"documentName\":\"Lab Test\",\n    \"documentDate\":\"2022-11-19\",\n    \"pathology\":\"AMAN-Lab\",\n    \"labTestName\":\"Test\",\n    \"parameters\": [{\"parameterName\": \"Test-1\", \"parameterUnitName\": \"Kg\", \"parameterValue\":\"WBC\"}]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/api/patient/report/save-patient-lab-manual-report",
+              "host": ["{{url}}"],
+              "path": [
+                "api",
+                "patient",
+                "report",
+                "save-patient-lab-manual-report"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Health Lockar Blog",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoiVVNFUiIsInN1YiI6Miwia2V5IjoiSGlNSFhTenVBZU1SYWFOaUtpUDkiLCJpYXQiOjE2NTUzMDE2NTgzOTUsImlzcyI6IkRvY0ZsaXgtVVNFUiIsImV4cCI6MTY3MDg1MzY1ODM5NX0.x4j8ZYK7ypK7do-Dr1JrNBNP_8p4rU-Dj09Fdqe_Us0",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/api/patient/report/health-lockar-blog",
+              "host": ["{{url}}"],
+              "path": ["api", "patient", "report", "health-lockar-blog"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Search Report",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoiVVNFUiIsInN1YiI6NDEsImtleSI6IklwU1o4b0hNdENzd0VkaVZXMG5wIiwiaWF0IjoxNjU2NDgxNDIxOTM0LCJpc3MiOiJEb2NGbGl4LVVTRVIiLCJleHAiOjE2NzIwMzM0MjE5MzR9.SegGYwdlcu4vD6Z0nNtc3-QIjgNrvX0puf_Q1oSxXJ4",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"page\": 0,\n    \"key\":\"prescri\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/api/patient/report/search-patient-report",
+              "host": ["{{url}}"],
+              "path": ["api", "patient", "report", "search-patient-report"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Examination",
+      "item": [
+        {
+          "name": "Examination List",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "{{patient-token}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/api/patient/examination",
+              "host": ["{{url}}"],
+              "path": ["api", "patient", "examination"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Medicine",
+      "item": [
+        {
+          "name": "New Request",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "{{patient-token}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/api/patient/medicine?page=1&limit=10&search=",
+              "host": ["{{url}}"],
+              "path": ["api", "patient", "medicine"],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "limit",
+                  "value": "10"
+                },
+                {
+                  "key": "search",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Diagnoses",
+      "item": [
+        {
+          "name": "Diagnoses List",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "{{patient-token}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/api/patient/diagnosis",
+              "host": ["{{url}}"],
+              "path": ["api", "patient", "diagnosis"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Doses",
+      "item": [
+        {
+          "name": "Dose List",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "{{patient-token}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/api/patient/dose",
+              "host": ["{{url}}"],
+              "path": ["api", "patient", "dose"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Medicine Note",
+      "item": [
+        {
+          "name": "Medicine Note List",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "{{patient-token}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/api/patient/medicine-notes",
+              "host": ["{{url}}"],
+              "path": ["api", "patient", "medicine-notes"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Privacy Policy",
+      "item": [
+        {
+          "name": "Privacy Policy",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "{{patient-token}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/api/patient/privacypolicy",
+              "host": ["{{url}}"],
+              "path": ["api", "patient", "privacypolicy"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Refund Policy",
+      "item": [
+        {
+          "name": "Refund Policy",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "{{patient-token}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/api/patient/refundpolicy",
+              "host": ["{{url}}"],
+              "path": ["api", "patient", "refundpolicy"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Term and condition",
+      "item": [
+        {
+          "name": "Term and condition",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "{{patient-token}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{url}}/api/patient/termandcondition",
+              "host": ["{{url}}"],
+              "path": ["api", "patient", "termandcondition"]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
